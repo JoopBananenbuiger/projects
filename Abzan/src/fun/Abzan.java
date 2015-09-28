@@ -1,53 +1,53 @@
-package fun;import javax.swing.JOptionPane;public class Abzan{public static void main(String[]a){int i=0;String s="",b=(
-"                                                     BA                                                                 "+
-"                                                      ZA                                                                "+
-"                                                       BZB    B                                                         "+
-"                                                        BZNA BZ                                                         "+
-"                                                         NABZN                                                          "+
-"                                                         NAZAABN                                                        "+
-"                                                      BABZZABZBBBNA                                                     "+
-"                                                   ZBZBBAZN  AAZAABBBABZ                                                "+
-"                                                ZABZBBAZA      ABZBZBZNNBZNABZNABZN                  N        BN        "+
-"                                             BNBZZBBZNZ         BZBNAZAABZZBBNANAZAABZN            BBNZ  BAZAABZ        "+
-"                                           BZBZABBNBZB            ZNNBNBBBNAZBZZBBNBABZBB        AZAABAABBZAZBN         "+
-"    ZZB                                ZABBZNZAZAABZ                BABZBBBZANBZZNAZAABNBAB    ZZABZABBNBAAZAABAZB      "+
-"    AZAA                             BNAABZNABZABB                    NZBAZAABNBNBZZBBNBABZZA AZAABABZBZNNBNAZBZBNBZ    "+
-"     BBAZNAA                       ZAABZZBBZNZAZ                        AABNABBNBBBZBBBNANBNBAAZAABZNBBZNNBZBABZBBAZN   "+
-" ZA   ZAABAABA                  ZAABZAZBZZBBNBA                           AZAABNBABZNNBZNNAZAABZBBBNZABNAABZBBBZNZBNA   "+
-" NB ZZBBNBZBZBBAZA           ABZBZBZNNBNAZAZA                              ABNAZBZBBBZABBZNAAZAABZNABZZBBZBZBZBBAZAA    "+
-"BNAABZNABZABBNZBAZAABZAZBNBBBNBAAZAABNZBBZN                                  NBNBBAZAABZANBZABBZNZAZAABZABBZNABNBNBZ    "+
-"ABBNZBBNANAZAABZBABNAZBZBBBZABBZNBAZABAAN                                     BAAZZAANBAAZZANAZAZAABNZAAZAABBABBZABBN   "+
-" ANBZABBZNABZZBAZAABBAABNAZBZZBBZBABZBBB                                        ZNBBZABBZBNBZBBAANBAAZZANBAAZAABNZAAZ   "+
-" AABAAZBZZBBNAZBZBABNANAZAABZNNBZBZAZAA                                          BBAABZABBNAZBZABBZBABZZBBNANBZBBAANBA  "+
-"  AZZANAZAZAABNZAAZAABBBABZABBNAZBZNBBZN                                        NBZBNBZNNBNZBBZBZAZAAAZAAAANBAAZZANAZA  "+
-"   ZAABNZAAZAABBANBZANBZABBNBZBZBBBZNZBZB                                      NBZZBBZNZBZBNAZAABANNBZNNBNZZBZBBAANBAAZ "+
-"    ZANANAZAABNZAAZAABANABZNNBNZABZNNBZBAB                                    ZNNBZNZAZAABBANBZNBBZZBBNBABZBBBNAZAANBAAZ"+
-"     ZANANAZAABNZAAZAABBBNBZZBBZNABNBAAZNB                                   BANABZBBBZABBZBZAZAABANABZZBBZBBBZBNBZBBAA "+
-"      NBAAZZANBAAZAABNZAAZAABBANBZZBBZBBBZB                                 NBZBBAZAABBAZBZZABZZBBZNZBZNNAANBAAZZANAZA  "+
-"       ZAABNZAAZAABBBABZABBNANBZZBBZBNBNBBBN                               AZAZNAAZAABNBABZZABZBBAZAABABNBZNNBZNABZBAB  "+
-"       ZBBBZNZAZAABABZBZABBZNZBZBNAANBAAZZANB                             AAZAABNZAAZAABBBZBZNNBZZBBZANBZBBAZAABZNNB    "+
-"      ZBZAZAABBAZBZBBBNANBNBBBNAZBZBNBZBBBZNZB                           ZANBZBBAANBAAZZANABAZAABNZAAZAABBAABZABBNB     "+
-"      ABZZAAZAABNBABZNNAZAABABBBNZABZZBBZNABZBB                         AANBAAZZANBAAZAABNZAAZAABANABZZBBZNZBZBNBZ      "+
-"      BBBNAZBZZBBZNZBZBNAZAABBANBZNNBNBBBZNABNAN                       AANBAAZZANANAZAABNZAAZAABBBABZZABZNNBNBBBZBN     "+
-"     BZZABNBABNANBZBBBZZBBNZZBZBBAANBAAZZANAZAZAA                     BNZAAZAABAABBZAZBNAZBNBBBNAABNBAAZAABABABZBBBZ    "+
-"    ANBZABBNZ   BAANBAAZZANAZAZAABNZAAZAABANBBZABB                   ZBBBZNABNANBNBABNAZBZNNBZNBAZAABBA  ABNBBBZNABN    "+
-"   ANBZ           BBAANBAAZZANBAAZAABNZAAZAABABNBZA                 BBNBZBZNNBZNZBNZBAZAABBBABZNNB       NBNBZNZBNAN    "+
-"                    BZZABZZBBNAAAANBAAZZANBAAZAABNZA               AZAABABNBZNNBZBABZNABZBBBNA               NBNANAZA   "+
-"                       ABBANBZZABNAZBZZBBZNZBZBBAANBA             AZZANBAAZAABNZAAZAABANNBNB                     ZBZBB  "+
-"                        BNAZBZBNBNAZBZNNBNBNBZNZAZAABB           BABZNNBZNBBZAZAANBAAZZAN                               "+
-"                          BAAZAABNZAAZAABBANBZABBZNZBZBA        BNANBNBABZBBBNAABNAABZBB                                "+
-"                                AZAABAANBZZBBNBABZABBZBAB      ZBBBZNAAANBAAZZANBAAZAA                                  "+
-"                                  BNZAAZAABBBABZBBBZNBBNAA    BZNABZBBAZAABABNBZABBN                                    "+
-"                                      AZBZBABZBBBZNZAANBAAZ  ZANABAZAABNZAAZAABBBABZ                                    "+
-"                                        BBBZNBBNAABZNABZBBAZAABZNNBZBZAZAABANBBZAB                                      "+
-"                                          BZNABZABBZBABNZBAANBAAZZANABAZAABNZAAZ                                        "+
-"                                            AABBBABZBBBZNBBNAABZNABZBBAZAABZNN                                          "+
-"                                             BZBZAZAABBAABZNABZBBBZNZBNBABNZB                                           "+
-"                                                  AANBAAZZANABAZAABNZAAZAAB                                             "+
-"                                                  BBABZBBBZNBBNAABZNABZBB                                               "+
-"                                                     AZAABZNNBZBZAZAAB                                                  "+
-"                                                   BANBZZBBZNAB  ZBBBZNZ                                                "+
-"                                                                    BZANBZ                                              "+
-"                                                                          BB                                            "
-).replace(" ","").replace("A","0").replace("B","1").replace("Z","2").replace("N","3");for(;i<2120;i+=4)s+=(char)Integer.
-parseInt(b.substring(i,i+4),4);JOptionPane.showMessageDialog(null,s);}}
+package fun;import javax.swing.JOptionPane;public class Abzan{public static void main(String[]a){int i,c,d;String s="",b=(
+"                                                     AZ                                                                 "+
+"                                                      BZ                                                                "+
+"                                                       ABA    A                                                         "+
+"                                                        ABNZ AB                                                         "+
+"                                                         NZABN                                                          "+
+"                                                         NZBZZAN                                                        "+
+"                                                      AZABBZABAAANZ                                                     "+
+"                                                   BABAAZBN  ZZBZZAAAZAB                                                "+
+"                                                BZABAAZBZ      ZABABABNNABNZABNZABN                  N        AN        "+
+"                                             ANABBAABNB         ABANZBZZABBAANZNZBZZABN            AANB  AZBZZAB        "+
+"                                           ABABZAANABA            BNNANAAANZBABBAANAZABAA        ZBZZAZZAABZBAN         "+
+"    BBA                                BZAABNBZBZZAB                AZABAAABZNABBNZBZZANAZA    BBZABZAANAZZBZZAZBA      "+
+"    ZBZZ                             ANZZABNZABZAA                    NBAZBZZANANABBAANAZABBZ ZBZZAZABABNNANZBABANAB    "+
+"     AAZBNZZ                       BZZABBAABNBZB                        ZZANZAANAAABAAANZNANAZZBZZABNAABNNABAZABAAZBN   "+
+" BZ   BZZAZZAZ                  BZZABZBABBAANAZ                           ZBZZANAZABNNABNNZBZZABAAANBZANZZABAAABNBANZ   "+
+" NA BBAANABABAAZBZ           ZABABABNNANZBZBZ                              ZANZBABAAABZAABNZZBZZABNZABBAABABABAAZBZZ    "+
+"ANZZABNZABZAANBAZBZZABZBANAAANAZZBZZANBAABN                                  NANAAZBZZABZNABZAABNBZBZZABZAABNZANANAB    "+
+"ZAANBAANZNZBZZABAZANZBABAAABZAABNAZBZAZZN                                     AZZBBZZNAZZBBZNZBZBZZANBZZBZZAAZAABZAAN   "+
+" ZNABZAABNZABBAZBZZAAZZANZBABBAABAZABAAA                                        BNAABZAABANABAAZZNAZZBBZNAZZBZZANBZZB   "+
+" ZZAZZBABBAANZBABAZANZNZBZZABNNABABZBZZ                                          AAZZABZAANZBABZAABAZABBAANZNABAAZZNAZ  "+
+"  ZBBZNZBZBZZANBZZBZZAAAZABZAANZBABNAABN                                        NABANABNNANBAABABZBZZZBZZZZNAZZBBZNZBZ  "+
+"   BZZANBZZBZZAAZNABZNABZAANABABAAABNBABA                                      NABBAABNBABANZBZZAZNNABNNANBBABAAZZNAZZB "+
+"    BZNZNZBZZANBZZBZZAZNZABNNANBZABNNABAZA                                    BNNABNBZBZZAAZNABNAABBAANAZABAAANZBZZNAZZB"+
+"     BZNZNZBZZANBZZBZZAAANABBAABNZANAZZBNA                                   AZNZABAAABZAABABZBZZAZNZABBAABAAABANABAAZZ "+
+"      NAZZBBZNAZZBZZANBZZBZZAAZNABBAABAAABA                                 NABAAZBZZAAZBABBZABBAABNBABNNZZNAZZBBZNZBZ  "+
+"       BZZANBZZBZZAAAZABZAANZNABBAABANANAAAN                               ZBZBNZZBZZANAZABBZABAAZBZZAZANABNNABNZABAZA  "+
+"       BAAABNBZBZZAZABABZAABNBABANZZNAZZBBZNA                             ZZBZZANBZZBZZAAABABNNABBAABZNABAAZBZZABNNA    "+
+"      BABZBZZAAZBABAAANZNANAAANZBABANABAAABNBA                           BZNABAAZZNAZZBBZNZAZBZZANBZZBZZAAZZABZAANA     "+
+"      ZABBZZBZZANAZABNNZBZZAZAAANBZABBAABNZABAA                         ZZNAZZBBZNAZZBZZANBZZBZZAZNZABBAABNBABANAB      "+
+"      AAANZBABBAABNBABANZBZZAAZNABNNANAAABNZANZN                       ZZNAZZBBZNZNZBZZANBZZBZZAAAZABBZABNNANAAABAN     "+
+"     ABBZANAZANZNABAAABBAANBBABAAZZNAZZBBZNZBZBZZ                     ANBZZBZZAZZAABZBANZBANAAANZZANAZZBZZAZAZABAAAB    "+
+"    ZNABZAANB   AZZNAZZBBZNZBZBZZANBZZBZZAZNAABZAA                   BAAABNZANZNANAZANZBABNNABNAZBZZAAZ  ZANAAABNZAN    "+
+"   ZNAB           AAZZNAZZBBZNAZZBZZANBZZBZZAZANABZ                 AANABABNNABNBANBAZBZZAAAZABNNA       NANABNBANZN    "+
+"                    ABBZABBAANZZZZNAZZBBZNAZZBZZANBZ               ZBZZAZANABNNABAZABNZABAAANZ               NANZNZBZ   "+
+"                       ZAAZNABBZANZBABBAABNBABAAZZNAZ             ZBBZNAZZBZZANBZZBZZAZNNANA                     BABAA  "+
+"                        ANZBABANANZBABNNANANABNBZBZZAA           AZABNNABNAABZBZZNAZZBBZN                               "+
+"                          AZZBZZANBZZBZZAAZNABZAABNBABAZ        ANZNANAZABAAANZZANZZABAA                                "+
+"                                ZBZZAZZNABBAANAZABZAABAZA      BAAABNZZZNAZZBBZNAZZBZZ                                  "+
+"                                  ANBZZBZZAAAZABAAABNAANZZ    ABNZABAAZBZZAZANABZAAN                                    "+
+"                                      ZBABAZABAAABNBZZNAZZB  BZNZAZBZZANBZZBZZAAAZAB                                    "+
+"                                        AAABNAANZZABNZABAAZBZZABNNABABZBZZAZNAABZA                                      "+
+"                                          ABNZABZAABAZANBAZZNAZZBBZNZAZBZZANBZZB                                        "+
+"                                            ZZAAAZABAAABNAANZZABNZABAAZBZZABNN                                          "+
+"                                             ABABZBZZAAZZABNZABAAABNBANAZANBA                                           "+
+"                                                  ZZNAZZBBZNZAZBZZANBZZBZZA                                             "+
+"                                                  AAZABAAABNAANZZABNZABAA                                               "+
+"                                                     ZBZZABNNABABZBZZA                                                  "+
+"                                                   AZNABBAABNZA  BAAABNB                                                "+
+"                                                                    ABZNAB                                              "+
+"                                                                          AA                                            "
+).replace(" ","");i=0;while(i<'5'*'('){for(d=0,c=d;d<4;d++)c=(c<<2)+b.substring(i,++i).hashCode()%0XF%4;s+=(char)c;}
+JOptionPane.showMessageDialog(null,s);}}
