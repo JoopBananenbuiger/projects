@@ -6,16 +6,20 @@ import java.util.Set;
 /**
  * The Sudoku class represents a sudoku field.
  */
-public class Sudoku implements Cloneable {
+public class Sudoku implements SudokuInterface {
 
 	/**
-	 * Size of the sudoku field
+	 * Size of the sudoku field.
 	 */
-	public static final int SIZE = 9;
+	private static final int SIZE = 9;
 
 	/**
 	 * Internal representation of the sudoku field.
 	 */
+	// Todo: it would be way prettier if this would be a Set of Fields or something,
+	// and the rest of the methods would reflect that change.
+	// The problem is that repeated searching trough a Set of Fields to find a given x/y location
+	// is way way slower than just looking up a 2 dimensional array. 
 	private int[][] fields;
 
 	/**
@@ -52,39 +56,51 @@ public class Sudoku implements Cloneable {
 	}
 
 	/**
-	 * Returns the possible values for a field with the given <code>x</code> and
-	 * <code>y</code> coordinates.
+	 * Gets the Fields of this Sudoku.
 	 * 
-	 * @param x			The X-coordinate of the field.
-	 * @param y			The X-coordinate of the field.
+	 * @return The fields of this Sudoku.
+	 */
+	public Set<Field> getFields() {
+		final Set<Field> fieldObjects = new HashSet<>();
+		for (int x = 0; x < SIZE; x++) {
+			for (int y = 0; y < SIZE; y++) {
+				fieldObjects.add(new Field(x, y, this.fields[x][y]));
+			}
+		}
+		return fieldObjects;
+	}
+	
+	/**
+	 * Returns the possible values for a field with the given <code>field</code>.
+	 * 
+	 * @param field		The field.
 	 * @return			A set of possible field values.
 	 */
-	public Set<Integer> getPossibleValuesForField(int x, int y) {
+	public Set<Integer> getPossibleValuesForField(final Field field) {
 		Set<Integer> possibleValues = new HashSet<>();
-		for (int i = 1; i < 10; i++) {
-			possibleValues.add(i);
+		for (int i = 0; i < SIZE; i++) {
+			possibleValues.add(i + 1);
 		}
 
 		for (int i = 0; i < SIZE; i++) {
-			possibleValues.remove(this.fields[x][i]);
-			possibleValues.remove(this.fields[i][y]);
-			possibleValues.remove(this.fields[x / 3 * 3 + i % 3][y / 3 * 3 + i / 3]);
+			possibleValues.remove(this.fields[field.getX()][i]);
+			possibleValues.remove(this.fields[i][field.getY()]);
+			possibleValues.remove(this.fields[field.getX() / 3 * 3 + i % 3][field.getY() / 3 * 3 + i / 3]);
 		}
 
 		return possibleValues;
 	}
 
 	/**
-	 * Sets the given <code>value</code> for a field with the given <code>x</code> and
-	 * <code>y</code> coordinates. Returns the current Sudoku object.
+	 * Sets the given <code>value</code> for a given <code>field</code>.
+	 * Returns the current Sudoku object.
 	 * 
-	 * @param x			The X-coordinate of the field.
-	 * @param y			The X-coordinate of the field.
+	 * @param field		The field to set.
 	 * @param value		The value to give to the field.
 	 * @return			The current Sudoku object.
 	 */
-	public Sudoku setFieldValue(int x, int y, int value) {
-		this.fields[x][y] = value;
+	public SudokuInterface setFieldValue(final Field field, int value) {
+		this.fields[field.getX()][field.getY()] = value;
 		return this;
 	}
 
@@ -94,24 +110,11 @@ public class Sudoku implements Cloneable {
 	 * @return			True if the sudoku is solved, false otherwise.
 	 */
 	public boolean isSolved() {
-		for (int x = 0; x < SIZE; x++) {
-			for (int y = 0; y < SIZE; y++) {
-				if (isUnknown(x, y))
-					return false;
+		for (final Field field : getFields()){
+			if (field.isUnknown()){
+				return false;
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Checks if a field with the given <code>x</code> and <code>y</code>
-	 * coordinates is not filled in yet.
-	 * 
-	 * @param x			The X-coordinate of the field.
-	 * @param y			The X-coordinate of the field.
-	 * @return			True if not filled in, false otherwise.
-	 */
-	public boolean isUnknown(int x, int y) {
-		return this.fields[x][y] == 0;
 	}
 }
