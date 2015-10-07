@@ -9,11 +9,6 @@ import java.util.Set;
 public class Sudoku implements SudokuInterface {
 
 	/**
-	 * Size of the sudoku field.
-	 */
-	private static final int SIZE = 9;
-
-	/**
 	 * Internal representation of the sudoku field.
 	 */
 	// Todo: it would be way prettier if this would be a Set of Fields or something,
@@ -34,8 +29,8 @@ public class Sudoku implements SudokuInterface {
 
 	@SuppressWarnings("unchecked")
 	public <T extends SudokuInterface> T cloneSudoku() {
-		final int[][] clonedFields = new int[SIZE][];
-		for (int i = 0; i < SIZE; i++) {
+		final int[][] clonedFields = new int[getSize()][];
+		for (int i = 0; i < getSize(); i++) {
 			clonedFields[i] = fields[i].clone();
 		}
 
@@ -43,14 +38,22 @@ public class Sudoku implements SudokuInterface {
 	}
 
 	public String toString() {
-		StringBuilder toStringBuilder = new StringBuilder("+-+-+-+-+-+-+-+-+-+");
+		StringBuilder toStringBuilder = new StringBuilder();
+		for (int i = 0; i < getSize(); i++) {
+			toStringBuilder.append("+-");
+		}
+		toStringBuilder.append("+");
 
-		for (int i = 0; i < SIZE; i++) {
+		for (int i = 0; i < getSize(); i++) {
 			toStringBuilder.append("\r\n+");
-			for (int j = 0; j < SIZE; j++) {
+			for (int j = 0; j < getSize(); j++) {
 				toStringBuilder.append((this.fields[i][j] == 0 ? " " : this.fields[i][j]) + "|");
 			}
-			toStringBuilder.append("\r\n+-+-+-+-+-+-+-+-+-+");
+			toStringBuilder.append("\r\n");
+			for (int j = 0; j < getSize(); j++) {
+				toStringBuilder.append("+-");
+			}
+			toStringBuilder.append("+");
 		}
 
 		return toStringBuilder.toString();
@@ -63,8 +66,8 @@ public class Sudoku implements SudokuInterface {
 	 */
 	public Set<Field> getFields() {
 		final Set<Field> fieldObjects = new HashSet<>();
-		for (int x = 0; x < SIZE; x++) {
-			for (int y = 0; y < SIZE; y++) {
+		for (int x = 0; x < getSize(); x++) {
+			for (int y = 0; y < getSize(); y++) {
 				fieldObjects.add(new Field(x, y, this.fields[x][y]));
 			}
 		}
@@ -79,14 +82,14 @@ public class Sudoku implements SudokuInterface {
 	 */
 	public Set<Integer> getPossibleValuesForField(final Field field) {
 		Set<Integer> possibleValues = new HashSet<>();
-		for (int i = 0; i < SIZE; i++) {
+		for (int i = 0; i < getSize(); i++) {
 			possibleValues.add(i + 1);
 		}
 
-		for (int i = 0; i < SIZE; i++) {
+		for (int i = 0; i < getSize(); i++) {
 			possibleValues.remove(this.fields[field.getX()][i]);
 			possibleValues.remove(this.fields[i][field.getY()]);
-			possibleValues.remove(this.fields[field.getX() / 3 * 3 + i % 3][field.getY() / 3 * 3 + i / 3]);
+			possibleValues.remove(this.fields[field.getX() / 3 * 3 + i % 3][field.getY() / 3 * 3 + i / (getSize() / 3)]);
 		}
 
 		return possibleValues;
@@ -118,5 +121,9 @@ public class Sudoku implements SudokuInterface {
 			}
 		}
 		return true;
+	}
+	
+	private int getSize(){
+		return fields[0].length;
 	}
 }

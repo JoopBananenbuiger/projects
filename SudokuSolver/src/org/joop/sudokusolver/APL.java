@@ -6,7 +6,7 @@ package org.joop.sudokusolver;
 public class APL {
 
 	public static void main(String[] args) {
-		Sudoku sudoku = new Sudoku(new int[][]{
+		final Sudoku sudoku = new Sudoku(new int[][]{
 			  { 0, 0, 0, 0, 3, 7, 6, 0, 0},
 			  { 0, 0, 0, 6, 0, 0, 0, 9, 0},
 			  { 0, 0, 8, 0, 0, 0, 0, 0, 4},
