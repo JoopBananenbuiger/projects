@@ -1,4 +1,4 @@
-package org.joop.sudokusolver;
+package sudokusolver;
 
 import java.util.Set;
 
