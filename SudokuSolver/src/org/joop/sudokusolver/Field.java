@@ -1,4 +1,4 @@
-package org.joop.sudokusolver;
+package sudokusolver;
 
 /**
  * A simple data holder class for a field in a Sudoku.

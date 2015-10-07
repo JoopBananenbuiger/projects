@@ -1,13 +1,36 @@
-package org.joop.sudokusolver;
+package sudokusolver;
 
 import java.util.HashSet;
 import java.util.Set;
+
+/*
+ * Added two constants to allow differently sized Sudokus to be built using the GUI.
+ * Probably not the best implementation due to array size being used for sizing now
+ * (used to be constants before recent update). Needs updating so both logic and GUI
+ * coincide with each other.
+ * 
+ * Added constructor to create a blank array. GUI should be updated to allow the user
+ * to select whether they want a pre-built puzzle, or want to enter their own puzzle
+ * for the solver to analyze. 
+ */
 
 /**
  * The Sudoku class represents a sudoku field.
  */
 public class Sudoku implements SudokuInterface {
-
+	
+	/**
+	 * The amount of boxes in the Sudoku.
+	 * Must be a perfect square.
+	 */
+	public static final int BOX_COUNT = 9;
+	
+	/**
+	 * The amount of cells in a box.
+	 * Must be a perfect square.
+	 */
+	public static final int BOX_SIZE = 9;
+	
 	/**
 	 * Internal representation of the sudoku field.
 	 */
@@ -25,6 +48,15 @@ public class Sudoku implements SudokuInterface {
 	public Sudoku(int[][] fields) {
 		super();
 		this.fields = fields;
+	}
+	
+	/**
+	 * Constructs a blank Sudoku object.
+	 */
+	public Sudoku(){
+		super();
+		int size = (int) Math.sqrt(BOX_SIZE * BOX_COUNT);
+		fields = new int[size][size];
 	}
 
 	@SuppressWarnings("unchecked")
