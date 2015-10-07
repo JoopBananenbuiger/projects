@@ -8,9 +8,9 @@ import java.util.Set;
  */
 public interface SudokuInterface extends Cloneable{
 	
-	public Sudoku clone();
+	public <T extends SudokuInterface> T cloneSudoku();
 	public Set<Field> getFields();
 	public Set<Integer> getPossibleValuesForField(final Field field);
-	public SudokuInterface setFieldValue(final Field field, int value);
+	public <T extends SudokuInterface> T setFieldValue(final Field field, int value);
 	public boolean isSolved();
 }

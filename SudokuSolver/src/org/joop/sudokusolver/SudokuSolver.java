@@ -18,7 +18,7 @@ public class SudokuSolver {
 	 * @param sudoku	The sudoku to solve.
 	 * @return			The solved sudoku.
 	 */
-	public SudokuInterface solve(final SudokuInterface sudoku) {
+	public <T extends SudokuInterface> T solve(T sudoku) {
 
 		if (sudoku.isSolved())
 			return sudoku;
@@ -40,7 +40,7 @@ public class SudokuSolver {
 			}
 
 		for (final int possibleValue : bestValues) {
-			final SudokuInterface result = solve(sudoku.clone().setFieldValue(currentBestField, possibleValue));
+			final T result = solve(sudoku.cloneSudoku().setFieldValue(currentBestField, possibleValue));
 			if (result != null) {
 				return result;
 			}

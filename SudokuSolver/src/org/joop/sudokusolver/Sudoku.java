@@ -32,13 +32,14 @@ public class Sudoku implements SudokuInterface {
 		this.fields = fields;
 	}
 
-	public Sudoku clone() {
+	@SuppressWarnings("unchecked")
+	public <T extends SudokuInterface> T cloneSudoku() {
 		final int[][] clonedFields = new int[SIZE][];
 		for (int i = 0; i < SIZE; i++) {
 			clonedFields[i] = fields[i].clone();
 		}
 
-		return new Sudoku(clonedFields);
+		return (T) new Sudoku(clonedFields);
 	}
 
 	public String toString() {
@@ -99,9 +100,10 @@ public class Sudoku implements SudokuInterface {
 	 * @param value		The value to give to the field.
 	 * @return			The current Sudoku object.
 	 */
-	public SudokuInterface setFieldValue(final Field field, int value) {
+	@SuppressWarnings("unchecked")
+	public <T extends SudokuInterface> T setFieldValue(final Field field, int value) {
 		this.fields[field.getX()][field.getY()] = value;
-		return this;
+		return (T) this;
 	}
 
 	/**
